@@ -1,6 +1,9 @@
 package com.microservices.currencyexchangeservice;
 
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +18,8 @@ public class CurrencyExchangeController {
 
 	@Autowired
 	private CurrencyExchangeRepository repository;
-	
+
+	private Logger logger = LoggerFactory.getLogger(CurrencyExchangeController.class);
 	@GetMapping("/currency-exchange/from/{from}/to/{to}")
 	public CurrencyExchange retrieveExchangeValue(@PathVariable String from, @PathVariable String to) {
 
@@ -25,7 +29,7 @@ public class CurrencyExchangeController {
 //		currencyExchange.setEnvironment(port);
 //		return currencyExchange;
 		
-		
+		logger.info("retrieveExchangeValueretrieveExchangeValue called with {} to {}"+from, to);
 		CurrencyExchange currencyExchange = repository.findByFromAndTo(from, to);
 
 		if (currencyExchange == null) {

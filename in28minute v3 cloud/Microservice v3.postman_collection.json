@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "da00d682-b1c7-4372-bfde-ca885dea2576",
+		"name": "Microservice v3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "limits",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/limits",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"limits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "currency-exchange",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/currency-exchange/from/USD/to/INR",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"currency-exchange",
+						"from",
+						"USD",
+						"to",
+						"INR"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Gateway",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/currency-exchange-service/currency-exchange/from/USD/to/INR",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"currency-exchange-service",
+						"currency-exchange",
+						"from",
+						"USD",
+						"to",
+						"INR"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "currency-conversion/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8100/currency-conversion/from/USD/to/INR/quantity/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"currency-conversion",
+						"from",
+						"USD",
+						"to",
+						"INR",
+						"quantity",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
